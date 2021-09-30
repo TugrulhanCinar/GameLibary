@@ -13,12 +13,14 @@ struct GameDetailModel: Codable {
     let minimumSystemRequirements: MinimumSystemRequirements?
     let screenshots: [Screenshot]?
 
+    
     enum CodingKeys: String, CodingKey {
         case id, title, thumbnail, status
+        case genre, platform, publisher, developer
+
         case shortDescription = "short_description"
         case gameDetailDescription
         case gameURL = "game_url"
-        case genre, platform, publisher, developer
         case releaseDate = "release_date"
         case profileURL = "profile_url"
         case minimumSystemRequirements = "minimum_system_requirements"

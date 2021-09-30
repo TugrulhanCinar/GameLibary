@@ -35,7 +35,7 @@ class AllGamesVC: UIViewController {
     func getData() {
         let service = Service()
                 service.getAllGameData()
-                service.completionHandler { [weak self] (games, status, message) in
+                service.completionHandlerGames { [weak self] (games, status, message) in
                     if status {
                         guard let self = self else {return}
                         guard let _games = games else {return}

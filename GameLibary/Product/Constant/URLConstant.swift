@@ -31,7 +31,10 @@ class URLConstant {
     
     
     func getGamesByCategoryURL(category: GameCategoryEnum) -> URL {
-        return URL(string: "https://www.mmobomb.com/api1/games?category=\(category.rawValue)")!
+        //todo düzelt:
+        let url =  URL(string: "https://www.mmobomb.com/api1/games?category=\(category.rawValue)")!
+        print(url)
+        return url
     }
     
     

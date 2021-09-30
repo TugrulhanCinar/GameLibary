@@ -15,12 +15,12 @@ struct NewsModelElement: Codable {
 
     enum CodingKeys: String, CodingKey {
         case id, title
-        case shortDescription
+        case shortDescription = "short_description"
         case thumbnail
-        case mainImage
-        case articleContent
-        case articleURL
+        case mainImage = "main_image"
+        case articleContent = "article_content"
+        case articleURL = "article_url"
     }
 }
 
-typealias NewsModel = [NewsModelElement]
+typealias NewsModel = NewsModelElement

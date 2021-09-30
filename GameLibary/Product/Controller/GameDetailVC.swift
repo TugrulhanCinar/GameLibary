@@ -9,7 +9,7 @@ import UIKit
 
 class GameDetailVC: UIViewController {
 
-    @IBOutlet weak var gameTitleLabel: UILabel!
+ //   @IBOutlet weak var gameTitleLabel: UILabel!
     @IBOutlet weak var thumbNailImage: UIImageView!
     @IBOutlet weak var shortDescriptionLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -23,7 +23,9 @@ class GameDetailVC: UIViewController {
     @IBOutlet weak var graphicsLabel: UILabel!
     @IBOutlet weak var storageLabel: UILabel!
     @IBOutlet weak var imagesCollectionView: UICollectionView!
-    
+    @IBOutlet weak var imagesTitleLabel: UILabel!
+    @IBOutlet weak var minimumSystemReqirementsView: UIStackView!
+    @IBOutlet weak var minimumSystemReqirementsTitle: UILabel!
     var gameModel : GameModel?
     var gameDetail : GameDetailModel?{
         didSet{
@@ -49,10 +51,15 @@ class GameDetailVC: UIViewController {
     
 
     @IBAction func buyButtonClicked(_ sender: UIButton) {
-        //TODO:
+        if let url = URL(string: gameDetail?.gameURL ?? "") {
+            UIApplication.shared.open(url)
+        }
     }
     
     @IBAction func visitGamePageButtonClicked(_ sender: UIButton) {
+        if let url = URL(string: gameDetail?.profileURL ?? "") {
+            UIApplication.shared.open(url)
+        }
     }
     
  
@@ -73,8 +80,9 @@ class GameDetailVC: UIViewController {
     }
     
     func setData(){
+        
         guard let detailData = gameDetail else { return  }
-        gameTitleLabel.text = detailData.title  ?? ""
+     //   gameTitleLabel.text = detailData.title  ?? ""
         guard let url = URL(string: detailData.thumbnail ?? "") else {
             thumbNailImage.image = UIImage(named: ImageConstant.questionMark)
             return
@@ -86,18 +94,26 @@ class GameDetailVC: UIViewController {
         platformLabel.text = detailData.platform ?? ""
         genreLabel.text = detailData.genre ?? ""
         publisherLabel.text = detailData.publisher ?? ""
+        
+        if detailData.minimumSystemRequirements != nil {
         osLabel.text =  detailData.minimumSystemRequirements?.os ?? ""
         processorLabel.text = detailData.minimumSystemRequirements?.processor ?? ""
         memoryLabel.text = detailData.minimumSystemRequirements?.memory ?? ""
         graphicsLabel.text = detailData.minimumSystemRequirements?.graphics ?? ""
         storageLabel.text = detailData.minimumSystemRequirements?.storage ?? ""
+        } else {
+            minimumSystemReqirementsView.isHidden = true
+            minimumSystemReqirementsTitle.isHidden = true
+            
+        }
         guard let screnShots = detailData.screenshots  else { return }
-        
         if !screnShots.isEmpty {
             imagesCollectionView.isHidden = false
+            imagesTitleLabel.isHidden = false
             imagesCollectionView.register(GameDetailCollectionViewCell.nib(), forCellWithReuseIdentifier: GameDetailCollectionViewCell.identifier)
             imagesCollectionView.delegate = self
             imagesCollectionView.dataSource = self
+            
         }
         
         

@@ -8,7 +8,7 @@
 import Foundation
 
 
-enum GameCategoryEnum: String {
+enum GameCategoryEnum: String, CaseIterable {
     
  
     case mmorpg = "mmorpg"
