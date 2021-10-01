@@ -26,7 +26,9 @@ class GameDetailVC: UIViewController {
     @IBOutlet weak var imagesTitleLabel: UILabel!
     @IBOutlet weak var minimumSystemReqirementsView: UIStackView!
     @IBOutlet weak var minimumSystemReqirementsTitle: UILabel!
+    @IBOutlet weak var testConstrait: NSLayoutConstraint!
     var gameModel : GameModel?
+    var imageUrl: URL?
     var gameDetail : GameDetailModel?{
         didSet{
             DispatchQueue.main.async {
@@ -44,10 +46,7 @@ class GameDetailVC: UIViewController {
         imagesCollectionView.isHidden = true
         navigationItem.title = gameModel?.title ?? " "
         getData()
-        scrollView.contentSize = CGSize(width: 1500, height: 1500)
-
-
-        
+  
     }
     
 
@@ -97,12 +96,15 @@ class GameDetailVC: UIViewController {
         publisherLabel.text = detailData.publisher ?? ""
         
         if detailData.minimumSystemRequirements != nil {
-        osLabel.text =  detailData.minimumSystemRequirements?.os ?? ""
-        processorLabel.text = detailData.minimumSystemRequirements?.processor ?? ""
-        memoryLabel.text = detailData.minimumSystemRequirements?.memory ?? ""
-        graphicsLabel.text = detailData.minimumSystemRequirements?.graphics ?? ""
-        storageLabel.text = detailData.minimumSystemRequirements?.storage ?? ""
+            osLabel.text =  detailData.minimumSystemRequirements?.os ?? ""
+            processorLabel.text = detailData.minimumSystemRequirements?.processor ?? ""
+            memoryLabel.text = detailData.minimumSystemRequirements?.memory ?? ""
+            graphicsLabel.text = detailData.minimumSystemRequirements?.graphics ?? ""
+            storageLabel.text = detailData.minimumSystemRequirements?.storage ?? ""
+            
         } else {
+            testConstrait.constant = 0
+            view.layoutIfNeeded()
             minimumSystemReqirementsView.isHidden = true
             minimumSystemReqirementsTitle.isHidden = true
             
@@ -120,6 +122,7 @@ class GameDetailVC: UIViewController {
     
     
     func goImageDetail(imageUrl: URL){
+        self.imageUrl = imageUrl
         performSegue(withIdentifier: SegueConstant.gameDetailToImageDetailConstant.rawValue, sender: self)
         
     }
@@ -128,6 +131,9 @@ class GameDetailVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == SegueConstant.gameDetailToImageDetailConstant.rawValue {
             guard let imageDetailVC = segue.destination as? ImageDetailVC else { return  }
+         
+            
+            imageDetailVC.imageUrl =  imageUrl
             
             
         }

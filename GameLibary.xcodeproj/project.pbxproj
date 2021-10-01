@@ -42,7 +42,6 @@
 		9AA76ED42705DCD8005DCB3C /* GameCategoriesVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA76ED32705DCD8005DCB3C /* GameCategoriesVCExtension.swift */; };
 		9AA76ED82705EF00005DCB3C /* GameCategoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA76ED62705EF00005DCB3C /* GameCategoriesTableViewCell.swift */; };
 		9AA76ED92705EF00005DCB3C /* GameCategoriesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AA76ED72705EF00005DCB3C /* GameCategoriesTableViewCell.xib */; };
-		9AA76EDB2705FB7D005DCB3C /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA76EDA2705FB7D005DCB3C /* UIImageViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,7 +80,6 @@
 		9AA76ED32705DCD8005DCB3C /* GameCategoriesVCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCategoriesVCExtension.swift; sourceTree = "<group>"; };
 		9AA76ED62705EF00005DCB3C /* GameCategoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCategoriesTableViewCell.swift; sourceTree = "<group>"; };
 		9AA76ED72705EF00005DCB3C /* GameCategoriesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameCategoriesTableViewCell.xib; sourceTree = "<group>"; };
-		9AA76EDA2705FB7D005DCB3C /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,7 +187,6 @@
 				9A52FEC32704B66000EF23B0 /* GameDetailExtension.swift */,
 				9AA76ECB2705A648005DCB3C /* NewsVCExtension.swift */,
 				9AA76ED32705DCD8005DCB3C /* GameCategoriesVCExtension.swift */,
-				9AA76EDA2705FB7D005DCB3C /* UIImageViewExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -374,7 +371,6 @@
 				9A4BAFFB270311DF007B5122 /* GameModel.swift in Sources */,
 				9A52FEBD2704A5D700EF23B0 /* GameDetailModel.swift in Sources */,
 				9A0297D02706DE5900967EDD /* ImageDetailVC.swift in Sources */,
-				9AA76EDB2705FB7D005DCB3C /* UIImageViewExtension.swift in Sources */,
 				9A52FE7C27044AFD00EF23B0 /* AllGamesVCExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
