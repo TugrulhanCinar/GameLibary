@@ -13,7 +13,6 @@ class HomePageController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Service().getAllGameData()
 
     }
 

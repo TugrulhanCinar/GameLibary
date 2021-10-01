@@ -35,4 +35,17 @@ extension GameDetailVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
         return CGSize(width: 200, height: 150)
 
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+            //self.allGamesCollectionView(super.self, didSelectGame: gameList[indexPath.row])
+            guard let screenshotsList = self.gameDetail?.screenshots else { return }
+            if screenshotsList.count >  indexPath.row  {
+                guard let url = URL(string: screenshotsList[indexPath.row].image ?? "") else { return  }
+                
+                self.goImageDetail(imageUrl: url)
+            }
+            
+        
+    }
 }

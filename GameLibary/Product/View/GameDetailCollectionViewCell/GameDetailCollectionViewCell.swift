@@ -37,5 +37,7 @@ class GameDetailCollectionViewCell: UICollectionViewCell {
         image.af.setImage(withURL: url)
         
     }
+    
+    
 
 }

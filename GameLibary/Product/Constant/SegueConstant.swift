@@ -15,4 +15,6 @@ enum SegueConstant: String {
     case categoriesToDetailConstant = "categoriesToDetail"
     
     case newsToNewsDetailConstant = "goNewsDetail"
+    
+    case gameDetailToImageDetailConstant    = "goImageDetail"
 }

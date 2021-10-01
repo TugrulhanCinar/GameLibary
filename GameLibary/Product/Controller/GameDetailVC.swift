@@ -9,7 +9,7 @@ import UIKit
 
 class GameDetailVC: UIViewController {
 
- //   @IBOutlet weak var gameTitleLabel: UILabel!
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var thumbNailImage: UIImageView!
     @IBOutlet weak var shortDescriptionLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -44,6 +44,7 @@ class GameDetailVC: UIViewController {
         imagesCollectionView.isHidden = true
         navigationItem.title = gameModel?.title ?? " "
         getData()
+        scrollView.contentSize = CGSize(width: 1500, height: 1500)
 
 
         
@@ -115,10 +116,21 @@ class GameDetailVC: UIViewController {
             imagesCollectionView.dataSource = self
             
         }
+    }
+    
+    
+    func goImageDetail(imageUrl: URL){
+        performSegue(withIdentifier: SegueConstant.gameDetailToImageDetailConstant.rawValue, sender: self)
         
-        
-       
-        
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == SegueConstant.gameDetailToImageDetailConstant.rawValue {
+            guard let imageDetailVC = segue.destination as? ImageDetailVC else { return  }
+            
+            
+        }
     }
     
 }

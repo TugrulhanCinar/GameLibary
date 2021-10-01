@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A0297D02706DE5900967EDD /* ImageDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0297CF2706DE5900967EDD /* ImageDetailVC.swift */; };
 		9A4BAFD42702FA55007B5122 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4BAFD32702FA55007B5122 /* AppDelegate.swift */; };
 		9A4BAFD62702FA55007B5122 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4BAFD52702FA55007B5122 /* SceneDelegate.swift */; };
 		9A4BAFD82702FA55007B5122 /* HomePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4BAFD72702FA55007B5122 /* HomePageController.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9A0297CF2706DE5900967EDD /* ImageDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailVC.swift; sourceTree = "<group>"; };
 		9A4BAFD02702FA55007B5122 /* GameLibary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameLibary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A4BAFD32702FA55007B5122 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A4BAFD52702FA55007B5122 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				9AA76EC52705A091005DCB3C /* NewsVC.swift */,
 				9AA76ECD2705ACF4005DCB3C /* NewsDetailVC.swift */,
 				9AA76ED12705DB85005DCB3C /* GameCategoriesVC.swift */,
+				9A0297CF2706DE5900967EDD /* ImageDetailVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				9AA76ECE2705ACF4005DCB3C /* NewsDetailVC.swift in Sources */,
 				9A4BAFFB270311DF007B5122 /* GameModel.swift in Sources */,
 				9A52FEBD2704A5D700EF23B0 /* GameDetailModel.swift in Sources */,
+				9A0297D02706DE5900967EDD /* ImageDetailVC.swift in Sources */,
 				9AA76EDB2705FB7D005DCB3C /* UIImageViewExtension.swift in Sources */,
 				9A52FE7C27044AFD00EF23B0 /* AllGamesVCExtension.swift in Sources */,
 			);
