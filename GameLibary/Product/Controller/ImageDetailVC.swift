@@ -7,21 +7,28 @@
 
 import UIKit
 
-class ImageDetailVC: UIViewController {
+class ImageDetailVC: UIViewController, UIScrollViewDelegate{
 
     @IBOutlet weak var detailImageView: UIImageView!
     var imageUrl: URL?
+    @IBOutlet weak var viewThis: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
-    @IBOutlet weak var scroolView: UIScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         guard let url = imageUrl else { return  }
         
         detailImageView.af.setImage(withURL: url)
-        scroolView.minimumZoomScale = 1.0
-        scroolView.maximumZoomScale = 6.0
-     
+   
+        scrollView.delegate = self
+        
+        
+        scrollView.minimumZoomScale = 1.0
+        scrollView.maximumZoomScale = 4.0
+        scrollView.zoomScale = 1.0
+
     }
     
 
@@ -29,9 +36,8 @@ class ImageDetailVC: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-           
-            return detailImageView
-        }
-    
+        return viewThis
+    }
 }
